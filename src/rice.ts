@@ -45,7 +45,7 @@ function updateRICEScoreOnForm(storedFields: IStoredFieldReferences) {
 
                 let rice = 0;
                 if (effortValue > 0) {
-                  rice = (reachValue * impactValue * confidenceValue) / effortValue;
+                  rice = Math.round((reachValue * impactValue * confidenceValue) / effortValue);
                 }
 
                 service.setFieldValue(storedFields.riceScoreField, rice);
